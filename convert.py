@@ -4,7 +4,7 @@ from xml.dom import minidom
 import os
 import glob
 
-# ラベルのリストを編集
+# ラベルのリストを編集したい場合はここ
 lut={}
 lut["Strawberry"] =0
 
@@ -26,9 +26,9 @@ def convert_coordinates(size, box):
 def convert_xml2yolo( lut ):
 
     for fname in glob.glob("xml/*.xml"):
-        
+
         xmldoc = minidom.parse(fname)
-        
+
         # fname_out = (fname[:-4]+'.txt')
         fname_out = ('txt/' + os.path.basename(fname)[:-4] + '.txt')
 
